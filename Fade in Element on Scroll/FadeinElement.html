@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<style>
+*,*:before,*:after {box-sizing:border-box}
+
+html,body {
+  margin: 0;
+  background: #438475;
+}
+
+.main {
+  float:left;
+  width: 100%;
+  padding: 10vh 0 40vh;
+}
+
+.container {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.card {
+  float:left;
+  width: 27%;
+  margin: 3%;
+  height: 15vh;
+  background:#fff;
+  border-radius: 5px;
+  box-shadow: 0px .125em .25em rgba(0,0,0,.25);
+}
+.card:hover {
+  transform: translateY(-.25em);
+  box-shadow: 0 .25em 1em rgba(0,0,0,.5);
+}
+.fade-content > *{transition: ease opacity .25s, ease transform .25s;}
+
+/* Offsets timing for groups of three. This must be adjusted if there are more or less than three element per row.*/
+.fade-content > *:nth-child(3n+2) {transition-delay: .1s;}
+.fade-content > *:nth-child(3n+3) {transition-delay: .2s;}
+</style>
+</head>
+<body>
+  <div class="main">
+    <div class="container fade-content">
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    
+    </div>
+    </div>
+  
+  <script>
+    $('.fade-content > *').css({'opacity':'0', 'transform': 'translateY(' + 2 + 'em)'});
+$(window).on('scroll load', function(){
+  $('.fade-content > *').each( function(i){
+    var bottom_of_object = $(this).offset().top + $(this).outerHeight()/8;
+    var bottom_of_window = $(window).scrollTop() + $(window).height();
+    if( bottom_of_window > bottom_of_object ){  
+      $(this).css({'opacity':'1', 'transform': 'translateY(' + 0 + 'em)'});        
+    } else {
+      $(this).css({'opacity':'0', 'transform': 'translateY(' + 2 + 'em)'});
+    }
+  });
+});
+  </script>
+</body>
+</html>
