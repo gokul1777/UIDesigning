@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #120439;
+  height: 100%;
+  font-family: 'tradegothiclt-bold', sans-serif;
+}
+h1 {
+  font-size: 5em;
+  color: white;
+  text-transform: uppercase;
+}
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+</style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <script>document.addEventListener('DOMContentLoaded',function(event){
+      var dataText = [ "Happy Birthday"];
+            function typeWriter(text, i, fnCallback) {
+        if (i < (text.length)) {
+         document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+              setTimeout(function() {
+            typeWriter(text, i + 1, fnCallback)
+          }, 100);
+        }
+        else if (typeof fnCallback == 'function') {
+          setTimeout(fnCallback, 10);
+        }
+      }
+       function StartTextAnimation(i) {
+         if (typeof dataText[i] == 'undefined'){
+            setTimeout(function() {
+              StartTextAnimation(0);
+            }, 500);
+         }
+        if (i < dataText[i].length) {
+         typeWriter(dataText[i], 0, function(){
+           StartTextAnimation(i + 1);
+         });
+        }
+      }
+      StartTextAnimation(0);
+    });
+    </script>
+</body>
+</html>
